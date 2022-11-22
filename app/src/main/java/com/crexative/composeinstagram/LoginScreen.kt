@@ -31,19 +31,18 @@ fun LoginScreen() {
     ) {
         Header(Modifier.align(Alignment.TopEnd))
         Body(Modifier.align(Alignment.Center))
+        Footer(Modifier.align(Alignment.BottomCenter))
     }
 }
 
 @Composable
 fun Header(modifier: Modifier) {
     val activity = LocalContext.current as Activity
-    Icon(
-        imageVector = Icons.Default.Close,
+    Icon(imageVector = Icons.Default.Close,
         contentDescription = "close app",
         modifier = modifier.clickable {
             activity.finish()
-        }
-    )
+        })
 }
 
 @Composable
@@ -82,18 +81,14 @@ fun ImageLogo(modifier: Modifier) {
 @Composable
 fun Email(email: String, onTextChange: (String) -> Unit) {
     TextField(
-        value = email,
-        onValueChange = { onTextChange(it) },
-        modifier = Modifier.fillMaxWidth()
+        value = email, onValueChange = { onTextChange(it) }, modifier = Modifier.fillMaxWidth()
     )
 }
 
 @Composable
 fun Password(password: String, onTextChange: (String) -> Unit) {
     TextField(
-        value = password,
-        onValueChange = { onTextChange(it) },
-        modifier = Modifier.fillMaxWidth()
+        value = password, onValueChange = { onTextChange(it) }, modifier = Modifier.fillMaxWidth()
     )
 }
 
@@ -157,6 +152,35 @@ fun SocialLogin() {
             fontSize = 14.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(horizontal = 8.dp),
+            color = Color(0xFF4EA8E9)
+        )
+    }
+}
+
+@Composable
+fun Footer(modifier: Modifier) {
+    Column(modifier = modifier.fillMaxWidth()) {
+        Divider(
+            modifier = Modifier
+                .background(Color(0xFFF9F9F9))
+                .height(1.dp)
+                .fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.size(24.dp))
+        SignUp()
+        Spacer(modifier = Modifier.size(24.dp))
+    }
+}
+
+@Composable
+fun SignUp() {
+    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+        Text(text = "Don't have an account", fontSize = 12.sp, color = Color(0XFFB5B5B5))
+        Text(
+            text = "Sign Up",
+            fontSize = 12.sp,
+            modifier = Modifier.padding(horizontal = 8.dp),
+            fontWeight = FontWeight.Bold,
             color = Color(0xFF4EA8E9)
         )
     }
