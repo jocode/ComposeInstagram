@@ -14,7 +14,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.crexative.composeinstagram.login.ui.LoginScreen
 import com.crexative.composeinstagram.login.ui.LoginViewModel
 import com.crexative.composeinstagram.ui.theme.ComposeInstagramTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
