@@ -11,8 +11,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.crexative.composeinstagram.login.LoginScreen
-import com.crexative.composeinstagram.login.LoginViewModel
+import com.crexative.composeinstagram.login.ui.LoginScreen
+import com.crexative.composeinstagram.login.ui.LoginViewModel
 import com.crexative.composeinstagram.ui.theme.ComposeInstagramTheme
 
 class MainActivity : ComponentActivity() {
